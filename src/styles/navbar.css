@@ -6,7 +6,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(37, 37, 37, 0.068);
+  background-color: rgba(37, 37, 37, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.359);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 .navbar .searchbar {
   order: 1;
@@ -59,6 +61,9 @@
   transition: all 0.1s ease-in-out;
 }
 .navbar .header-export-container .export-timezone-button:active {
+  background-color: rgba(0, 0, 0, 0.179);
+}
+.navbar .header-export-container .export-timezone-button:hover {
   background-color: rgba(0, 0, 0, 0.166);
 }
 @media (max-width: 768px) {
