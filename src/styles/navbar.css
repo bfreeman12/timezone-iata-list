@@ -1,14 +1,16 @@
 .navbar {
+  overflow: hidden;
   position: sticky;
   top: 0;
-  height: 9vh;
+  height: 8vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgba(37, 37, 37, 0.068);
 }
 .navbar .searchbar {
-  margin-left: 7rem;
+  order: 1;
+  margin-left: 0.8rem;
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -34,21 +36,91 @@
 .navbar .searchbar input[type=text]::placeholder {
   color: #aaa;
 }
-.navbar .navbar-header {
+.navbar .header-export-container {
+  margin-right: 2rem;
+  order: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  gap: 2rem;
+}
+.navbar .header-export-container .navbar-header {
   font-size: larger;
-  margin-right: 12%;
   color: rgba(0, 0, 0, 0.704);
+}
+.navbar .header-export-container .export-timezone-button {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.929);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.navbar .header-export-container .export-timezone-button:active {
+  background-color: rgba(0, 0, 0, 0.166);
 }
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
     height: auto;
+    flex-direction: column;
   }
   .navbar .searchbar {
-    margin-left: 0;
+    order: 1;
+    text-align: center;
     width: 100%;
   }
-  .navbar .navbar-header {
-    margin-right: 0;
+  .navbar .header-export-container {
+    order: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    margin: 5px auto;
+  }
+}
+
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+.Modal h2 {
+  margin-top: 0;
+  color: #333;
+}
+.Modal p {
+  color: #666;
+}
+.Modal button {
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.Modal button:hover {
+  background: #0056b3;
+}
+.Modal button:last-child {
+  background: #6c757d;
+}
+.Modal button:last-child:hover {
+  background: #5a6268;
+}
+@media (max-width: 768px) {
+  .Modal {
+    width: 90%;
   }
 }/*# sourceMappingURL=navbar.css.map */
